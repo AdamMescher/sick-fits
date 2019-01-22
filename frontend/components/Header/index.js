@@ -1,16 +1,18 @@
-import Nav from './Nav';
+import StyledHeader from './styled';
+import Logo from '../Logo/index';
+import Nav from '../Nav/index';
 
 const Header = () => (
-    <div>
+    <StyledHeader>
         <div className="bar">
-            <a href="">Sick Fits</a>
+            <Logo />
             <Nav />
         </div>
         <div className="sub-bar">
             <p>Search</p>
         </div>
         <div className="cart">Cart</div>
-    </div>
+    </StyledHeader>
 )
 
 export default Header;
