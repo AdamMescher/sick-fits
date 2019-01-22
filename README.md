@@ -13,8 +13,7 @@ This project exists because I want to push myself to learn more about the React 
 ### Frontend
 - React (Next.js)
 - Styled Components
-- React-Apollo
-  - Performs GraphQL mutations, queries, caching, managing local state, as well as error and loading UI states. 
+- Apollo Client (React-Apollo)
 - Jest & Enzyme
 
 ### Backend
