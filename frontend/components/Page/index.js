@@ -10,13 +10,13 @@ const theme = {
     lightGrey: '#E1E1E1',
     offWhite: '#EDEDED',
     maxWidth: '1000px',
-    bas: '0 12px 24px 0 rgba(0, 0, 0, 0.09)'
+    bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)'
 }
 
 injectGlobal`
     @font-face {
         font-family: 'radnika_next';
-        src: url('/static/radnikanext-medium-webfont.woff2')format(woff2);
+        src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }
@@ -34,9 +34,11 @@ injectGlobal`
         margin: 0;
         font-size: 1.5rem;
         line-height: 2;
+        font-family: 'radnika_next';
     }
     a {
         color: ${theme.black};
+        text-decoration: none;
     }
 `;
 
