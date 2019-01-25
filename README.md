@@ -19,5 +19,3 @@ This project exists because I want to push myself to learn more about the React 
 ### Backend
 - GraphQL Yoga
 - Prisma
-
-Is this commit GPG signed and verified?
