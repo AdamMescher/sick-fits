@@ -6,7 +6,7 @@ Eventually, it will be a full stack online clothing store complete with real cre
 
 ## Why?
 
-This project exists because I want to push myself to learn more about the React ecosystem and learn more about the GraphQL workflow. 
+This project exists because I want to push myself to learn more about the React ecosystem and learn more about the GraphQL workflow.
 
 ## Tech Stack
 
@@ -19,3 +19,4 @@ This project exists because I want to push myself to learn more about the React 
 ### Backend
 - GraphQL Yoga
 - Prisma
+    - [prisma-bindings](https://github.com/prisma/prisma-binding) -- Provides a convenience layer for building GraphQL servers on top of Prisma services. Simplifies implementing your GraphQL resolvers by delegating execution of queries (or mutations) to the API of the underlying Prisma database service.
