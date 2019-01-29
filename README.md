@@ -20,3 +20,7 @@ This project exists because I want to push myself to learn more about the React 
 - GraphQL Yoga
 - Prisma
     - [prisma-bindings](https://github.com/prisma/prisma-binding) -- Provides a convenience layer for building GraphQL servers on top of Prisma services. Simplifies implementing your GraphQL resolvers by delegating execution of queries (or mutations) to the API of the underlying Prisma database service.
+    
+## Style Guide
+
+Enforced with Prettier, ESLint, and Airbnb rules
