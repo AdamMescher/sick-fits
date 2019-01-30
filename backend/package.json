@@ -35,5 +35,9 @@
     "presets": [
       "env"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "prettier": "^1.16.1"
   }
 }
