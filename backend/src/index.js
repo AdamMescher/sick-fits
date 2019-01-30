@@ -1,5 +1,5 @@
 require('dotenv').config();
-const createServer = require('./createServer').default;
+const createServer = require('./createServer');
 const db = require('./db').default;
 
 const server = createServer();
