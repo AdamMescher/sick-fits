@@ -10,7 +10,7 @@
     "test": "NODE_ENV=test jest --watch",
     "test-win": "SET NODE_ENV=test&& jest --watch",
     "heroku-postbuild": "next build",
-    "lint": "eslint '**/*.js'"
+    "lint": "./node_modules/.bin/eslint ./"
   },
   "author": "Adam Mescher",
   "license": "ISC",
