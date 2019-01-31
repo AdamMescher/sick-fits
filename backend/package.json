@@ -7,7 +7,7 @@
     "dev": "nodemon -e js,graphql -x node --inspect src/index.js",
     "test": "jest",
     "deploy": "prisma deploy --env-file .env",
-    "lint": "eslint '**/*.js'"
+    "lint": "./node_modules/.bin/eslint ./"
   },
   "author": "Adam Mescher",
   "dependencies": {
