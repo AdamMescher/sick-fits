@@ -1,6 +1,6 @@
 require('dotenv').config();
 const createServer = require('./createServer');
-const db = require('./db').default;
+const db = require('./db').default; // eslint-disable-line no-unused-vars
 
 const server = createServer();
 
