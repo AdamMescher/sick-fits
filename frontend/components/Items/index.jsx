@@ -1,33 +1,9 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
-import styled from 'styled-components';
 import Item from '../Item/index';
-
-const ALL_ITEMS_QUERY = gql`
-    query ALL_ITEMS_QUERY {
-        items {
-            id
-            title
-            price
-            description
-            image
-            largeImage
-        }
-    }
-`;
-
-const Centered = styled.div`
-    text-align: center;
-`
-
-const ItemsList = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 60px;
-    max-width: ${props => props.theme.maxWidth};
-    margin: 0 auto;
-`;
+import Centered from '../Centered';
+import ItemsList from '../ItemsList';
+import { ALL_ITEMS_QUERY } from '../../lib/queries';
 
 class Items extends Component {
     render() {
