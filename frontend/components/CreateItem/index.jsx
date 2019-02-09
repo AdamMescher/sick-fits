@@ -21,24 +21,23 @@ class CreateItem extends Component {
     this.setState({ [name]: val });
   };
 
-  handleUpload = async event => {
+  uploadFile = async event => {
     console.log('uploading file...');
     const files = event.target.files;
-    console.log(files);
-    // const data = new FormData();
-    // data.append('file', files[0]);
-    // data.append('upload_preset', 'sickfits');
-    // const response = await fetch('https://api.cloudinary.com/v1_1/mescher-io/image/upload', {
-    //   method: 'POST',
-    //   body: data
-    // });
-    // const file = await response.json();
-    // console.log('FILE: ', file);
-    // this.setState({
-    //   image: file.secure_url,
-    //   largeImage: file.eager[0].secure_url
-    // });
-    // console.log('STATE: ', this.state);
+    const data = new FormData();
+    data.append('file', files[0]);
+    data.append('upload_preset', 'sickfits');
+    const response = await fetch('https://api.cloudinary.com/v1_1/mescher-io/image/upload', {
+      method: 'POST',
+      body: data
+    });
+    const file = await response.json();
+    console.log('FILE: ', file);
+    this.setState({
+      image: file.secure_url,
+      largeImage: file.eager[0].secure_url
+    });
+    console.log('STATE: ', this.state);
   };
 
   render() {
@@ -48,11 +47,11 @@ class CreateItem extends Component {
           <StyledForm
             onSubmit={async event => {
               event.preventDefault();
-              //   const response = await createItem();
-              //   Router.push({
-              //     pathname: '/item',
-              //     query: { id: response.data.createItem.id }
-              //   });
+              const response = await createItem();
+              Router.push({
+                pathname: '/item',
+                query: { id: response.data.createItem.id }
+              });
             }}
           >
             <DisplayError error={error} />
