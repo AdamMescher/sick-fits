@@ -32,12 +32,10 @@ class CreateItem extends Component {
       body: data
     });
     const file = await response.json();
-    console.log('FILE: ', file);
     this.setState({
       image: file.secure_url,
       largeImage: file.eager[0].secure_url
     });
-    console.log('STATE: ', this.state);
   };
 
   render() {
