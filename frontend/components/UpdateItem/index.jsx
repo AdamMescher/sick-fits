@@ -5,7 +5,7 @@ import StyledForm from '../Form/styled';
 import DisplayError from '../DisplayError/index';
 import formatMoney from '../../lib/formatMoney';
 import { UPDATE_ITEM_MUTATION } from '../../lib/mutations';
-import { SINGLE_ITEM_QUERY } from '../../lib/queries';
+import { UPDATEITEM_SINGLE_ITEM_QUERY } from '../../lib/queries';
 
 class UpdateItem extends Component {
   state = {};
@@ -32,7 +32,7 @@ class UpdateItem extends Component {
   render() {
     const { id } = this.props;
     return (
-      <Query query={SINGLE_ITEM_QUERY} variables={{ id }}>
+      <Query query={UPDATEITEM_SINGLE_ITEM_QUERY} variables={{ id }}>
         {({ data, loading }) => {
           if (loading) return <p>Loading...</p>;
           if (!data.item) return <p>ERROR: No Item Found for ID "{id}"</p>;
