@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import DeleteItem from '../DeleteItem/index';
 import Title from '../styles/Title';
-import ItemStyles from '../styles/ItemStyles';
+import StyledItem from './styled';
 import PriceTag from '../styles/PriceTag';
 import formatMoney from '../../lib/formatMoney';
 export default class Item extends Component {
@@ -14,7 +14,7 @@ export default class Item extends Component {
   render() {
     const { item } = this.props;
     return (
-      <ItemStyles>
+      <StyledItem>
         {item.image && <img src={item.image} alt={item.title} />}
         <Title>
           <Link
@@ -35,12 +35,14 @@ export default class Item extends Component {
               query: { id: item.id }
             }}
           >
-            <a>Edit ✏️</a>
+            <button className="edit-item">Edit ✏️</button>
           </Link>
-          <button>Add To Cart 🛒</button>
-          <DeleteItem id={item.id}>Delete Item ⛔</DeleteItem>
+          <button className="add-to-cart">Add To Cart 🛒</button>
+          <DeleteItem className="delete-item" id={item.id}>
+            Delete Item ⛔
+          </DeleteItem>
         </div>
-      </ItemStyles>
+      </StyledItem>
     );
   }
 }
