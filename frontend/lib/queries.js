@@ -35,4 +35,19 @@ const SINGLEITEM_SINGLE_ITEM_QUERY = gql`
   }
 `;
 
-export { ALL_ITEMS_QUERY, UPDATEITEM_SINGLE_ITEM_QUERY, SINGLEITEM_SINGLE_ITEM_QUERY };
+const PAGINATION_QUERY = gql`
+  query PAGINATION_QUERY {
+    itemsConnection {
+      aggregate {
+        count
+      }
+    }
+  }
+`;
+
+export {
+  ALL_ITEMS_QUERY,
+  UPDATEITEM_SINGLE_ITEM_QUERY,
+  SINGLEITEM_SINGLE_ITEM_QUERY,
+  PAGINATION_QUERY
+};
