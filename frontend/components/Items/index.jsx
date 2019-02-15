@@ -5,6 +5,7 @@ import Centered from '../Centered/index';
 import ItemsList from '../ItemsList/index';
 import Pagination from '../Pagination/index';
 import { ALL_ITEMS_QUERY } from '../../lib/queries';
+import { perPage } from '../../config';
 
 class Items extends Component {
   render() {
@@ -12,7 +13,12 @@ class Items extends Component {
     return (
       <Centered>
         <Pagination page={page} />
-        <Query query={ALL_ITEMS_QUERY}>
+        <Query
+          query={ALL_ITEMS_QUERY}
+          variables={{
+            skip: page * perPage - perPage
+          }}
+        >
           {({ data, error, loading }) => {
             if (loading) {
               return <p>Loading...</p>;

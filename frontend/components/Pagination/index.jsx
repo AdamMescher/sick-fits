@@ -8,7 +8,8 @@ import { perPage } from '../../config';
 
 const Pagination = ({ page }) => (
   <Query query={PAGINATION_QUERY}>
-    {({ data, loading, error }) => {
+    {({ data, loading, error, refetch }) => {
+      refetch();
       if (loading) {
         return <p>Loading...</p>;
       }
