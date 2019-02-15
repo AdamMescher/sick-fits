@@ -22,6 +22,19 @@ const StyledPagination = styled.div`
     color: grey;
     pointer-events: none;
   }
+  .prev:hover,
+  .next:hover {
+    background-color: ${props => props.theme.red};
+    color: white;
+  }
+  .prev:hover {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .next:hover {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 `;
 
 export default StyledPagination;

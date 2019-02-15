@@ -1,6 +1,6 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import PaginationStyles from '../styles/PaginationStyles';
+import StyledPagination from './styled';
 import Head from 'next/head';
 import Link from 'next/link';
 import { PAGINATION_QUERY } from '../../lib/queries';
@@ -20,7 +20,7 @@ const Pagination = ({ page }) => (
       const pages = Math.ceil(count / perPage);
 
       return (
-        <PaginationStyles>
+        <StyledPagination>
           <Head>
             <title>
               Sick Fits! - Page {page} of {pages}
@@ -52,7 +52,7 @@ const Pagination = ({ page }) => (
               Next →
             </a>
           </Link>
-        </PaginationStyles>
+        </StyledPagination>
       );
     }}
   </Query>
