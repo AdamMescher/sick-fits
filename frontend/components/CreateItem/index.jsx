@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import Router from 'next/router';
-import StyledForm from '../Form/styled';
+import Form from '../Form/index';
 import DisplayError from '../DisplayError/index';
-import formatMoney from '../../lib/formatMoney';
 import { CREATE_ITEM_MUTATION } from '../../lib/mutations';
 
 class CreateItem extends Component {
@@ -42,7 +41,7 @@ class CreateItem extends Component {
     return (
       <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
         {(createItem, { loading, error }) => (
-          <StyledForm
+          <Form
             onSubmit={async event => {
               event.preventDefault();
               const response = await createItem();
@@ -104,7 +103,7 @@ class CreateItem extends Component {
               </label>
               <button type="submit">Submit</button>
             </fieldset>
-          </StyledForm>
+          </Form>
         )}
       </Mutation>
     );
