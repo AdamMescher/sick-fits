@@ -14,19 +14,21 @@ class Signup extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
   render() {
-    const { state } = this.state;
     return (
-      <Mutation mutation={SIGNUP_MUTATION} variables={state}>
+      <Mutation mutation={SIGNUP_MUTATION} variables={this.state}>
         {(signup, { error, loading }) => (
           <Form
             method="post"
             onSubmit={async event => {
               event.preventDefault();
+              const res = await signup();
+              console.log(res);
+              this.setState({ name: '', email: '', password: '' });
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
+              <h2>Sign Up for An Account</h2>
               <Error error={error} />
-              <h2>Sign Up for an Account</h2>
               <label htmlFor="email">
                 Email
                 <input
@@ -57,6 +59,7 @@ class Signup extends Component {
                   onChange={this.saveToState}
                 />
               </label>
+
               <button type="submit">Sign Up!</button>
             </fieldset>
           </Form>

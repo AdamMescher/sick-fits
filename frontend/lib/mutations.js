@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-const CREATE_ITEM_MUTATION = gql`
+const CREATE_ITEM_MUTATION = gql `
   mutation CREATE_ITEM_MUTATION(
     $title: String!
     $description: String!
@@ -20,7 +20,7 @@ const CREATE_ITEM_MUTATION = gql`
   }
 `;
 
-const UPDATE_ITEM_MUTATION = gql`
+const UPDATE_ITEM_MUTATION = gql `
   mutation UPDATE_ITEM_MUTATION($id: ID!, $title: String, $description: String, $price: Int!) {
     updateItem(id: $id, title: $title, description: $description, price: $price) {
       id
@@ -31,7 +31,7 @@ const UPDATE_ITEM_MUTATION = gql`
   }
 `;
 
-const DELETE_ITEM_MUTATION = gql`
+const DELETE_ITEM_MUTATION = gql `
   mutation DELETE_ITEM_MUTATION($id: ID!) {
     deleteItem(id: $id) {
       id
@@ -39,7 +39,7 @@ const DELETE_ITEM_MUTATION = gql`
   }
 `;
 
-const SIGNUP_MUTATION = gql`
+const SIGNUP_MUTATION = gql `
   mutation SIGNUP_MUTATION($email: String!, $name: String!, $password: String!) {
     signup(email: $email, name: $name, password: $password) {
       id
@@ -49,4 +49,9 @@ const SIGNUP_MUTATION = gql`
   }
 `;
 
-export { CREATE_ITEM_MUTATION, UPDATE_ITEM_MUTATION, DELETE_ITEM_MUTATION, SIGNUP_MUTATION };
+export {
+  CREATE_ITEM_MUTATION,
+  UPDATE_ITEM_MUTATION,
+  DELETE_ITEM_MUTATION,
+  SIGNUP_MUTATION
+};

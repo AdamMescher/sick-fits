@@ -4,8 +4,6 @@ import Columns from '../components/styles/Columns';
 const SignupPage = () => (
   <Columns>
     <Signup />
-    <Signup />
-    <Signup />
   </Columns>
 );
 
