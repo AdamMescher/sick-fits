@@ -1,5 +1,9 @@
 import StyledForm from './styled';
 
-const Form = ({ children, method }) => <StyledForm method={method || 'get'}>{children}</StyledForm>;
+const Form = ({ children, method, onSubmit }) => (
+  <StyledForm method={method || 'get'} onSubmit={onSubmit}>
+    {children}
+  </StyledForm>
+);
 
 export default Form;
