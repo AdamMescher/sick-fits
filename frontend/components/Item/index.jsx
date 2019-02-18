@@ -4,7 +4,7 @@ import Link from 'next/link';
 import StyledItem from './styled';
 import DeleteItem from '../DeleteItem/index';
 import Title from '../Title/index';
-import PriceTag from '../PriceTag/styled';
+import PriceTag from '../PriceTag/index';
 export default class Item extends Component {
   static propTypes = {
     item: PropTypes.object.isRequired
