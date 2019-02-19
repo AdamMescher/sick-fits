@@ -46,9 +46,21 @@ const PAGINATION_QUERY = gql`
   }
 `;
 
+const CURRENT_USER_QUERY = gql`
+  query CURRENT_USER_QUERY {
+    me {
+      id
+      email
+      name
+      permissions
+    }
+  }
+`;
+
 export {
   ALL_ITEMS_QUERY,
   UPDATEITEM_SINGLE_ITEM_QUERY,
   SINGLEITEM_SINGLE_ITEM_QUERY,
-  PAGINATION_QUERY
+  PAGINATION_QUERY,
+  CURRENT_USER_QUERY
 };
