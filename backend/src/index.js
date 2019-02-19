@@ -1,12 +1,20 @@
 const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const createServer = require('./createServer');
-const db = require('./db').default; // eslint-disable-line no-unused-vars
+const db = require('./db'); // eslint-disable-line no-unused-vars
 
 const server = createServer();
-
 server.express.use(cookieParser());
-// TODO Use express middleware to handle populate current user
+server.express.use((request, response, next) => {
+  const { token } = request.cookies;
+  if (token) {
+    const { userId } = jwt.verify(token, process.env.APP_SECRET);
+    request.userId = userId;
+  }
+  next();
+});
+
 server.start(
   {
     cors: {
