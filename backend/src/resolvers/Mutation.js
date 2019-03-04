@@ -41,7 +41,7 @@ const Mutation = {
       },
       info
     );
-    const token = jwt.sign({ userID: user.id }, process.env.APP_SECRET);
+    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET);
     ctx.response.cookie('cookie', token, {
       httpOnly: true,
       maxAge: 1000 * 60 * 24 * 365

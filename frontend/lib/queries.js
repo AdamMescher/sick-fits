@@ -47,7 +47,7 @@ const PAGINATION_QUERY = gql`
 `;
 
 const CURRENT_USER_QUERY = gql`
-  query CURRENT_USER_QUERY {
+  query {
     me {
       id
       email

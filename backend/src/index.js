@@ -9,8 +9,8 @@ server.express.use(cookieParser());
 server.express.use((request, response, next) => {
   const { token } = request.cookies;
   if (token) {
-    const { userId } = jwt.verify(token, process.env.APP_SECRET);
-    request.userId = userId;
+    const { userID } = jwt.verify(token, process.env.APP_SECRET);
+    request.userId = userID;
   }
   next();
 });
