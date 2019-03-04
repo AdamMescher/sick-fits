@@ -1,5 +1,5 @@
 import { Query } from 'react-apollo';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { CURRENT_USER_QUERY } from '../../lib/queries';
 
 const User = props => (
@@ -9,7 +9,7 @@ const User = props => (
 );
 
 User.PropTypes = {
-  children: PropTypes.func.isRequired
+  children: propTypes.func.isRequired
 };
 
 export default User;
